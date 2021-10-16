@@ -2,6 +2,7 @@ plugins {
     id 'java-library'
     id 'kotlin'
     id 'maven-publish'
+    id 'com.github.johnrengelman.shadow' version '7.1.0'
 }
 
 java {
@@ -20,8 +21,11 @@ dependencies {
 project.afterEvaluate {
     publishing {
         publications {
-            release(MavenPublication) {
-                from(components["java"])
+            shadow(MavenPublication) { publication ->
+                from project.shadow.component(publication)
+                groupId 'com.github.greghynds'
+                artifactId 'approvals-kt'
+                version '0.0.4'
             }
         }
     }
