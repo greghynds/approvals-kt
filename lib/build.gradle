@@ -9,9 +9,9 @@ java {
 }
 
 dependencies {
-    implementation files('/Users/hyndsg01/.m2/repository/com/colisweb/approvals-java/0.13.3-SNAPSHOT/approvals-java-0.13.3-SNAPSHOT.jar')
-
+    implementation files("$projectDir/libs/approvals-java-0.13.3.jar")
     implementation 'org.jetbrains.kotlin:kotlin-reflect:1.5.31'
+
     testImplementation "org.assertj:assertj-core:3.19.0"
     testImplementation 'junit:junit:4.13.2'
 }
