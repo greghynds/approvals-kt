@@ -11,8 +11,8 @@ java {
 }
 
 dependencies {
-    implementation files("$projectDir/libs/approvals-java-0.13.3.jar")
     implementation 'org.jetbrains.kotlin:kotlin-reflect:1.5.31'
+    implementation "com.approvaltests:approvaltests:12.1.1"
 
     testImplementation "org.assertj:assertj-core:3.19.0"
     testImplementation 'junit:junit:4.13.2'
