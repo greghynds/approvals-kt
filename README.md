@@ -1,5 +1,5 @@
 # Approvals-Kt
-Helper functions for making ![Approvals-Java](https://github.com/approvals/ApprovalTests.Java) more Kotlin-friendly
+Helper functions for making [Approvals-Java](https://github.com/approvals/ApprovalTests.Java) more Kotlin-friendly
 
 
 ## Usage
