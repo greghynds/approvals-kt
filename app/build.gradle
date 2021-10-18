@@ -39,7 +39,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
 
-    testImplementation 'com.github.greghynds:approvals-kt:0.0.5'
+    testImplementation project(':lib')
     testImplementation "com.approvaltests:approvaltests:12.1.1"
     testImplementation 'junit:junit:4.13.2'
 
