@@ -31,7 +31,7 @@ Approvals-Kt is available on [JitPack](https://jitpack.io). To include it in you
 
 ```gradle
 dependencies {
-    testImplementation 'com.github.greghynds:approvals-kt:0.0.5'
+    testImplementation 'com.github.greghynds:approvals-kt:0.0.6'
     testImplementation "com.approvaltests:approvaltests:12.1.1"
 }
 ```
