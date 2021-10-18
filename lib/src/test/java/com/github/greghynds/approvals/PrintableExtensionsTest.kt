@@ -148,9 +148,7 @@ class PrintableExtensionsTest {
 
     private data class WrapsAnObject(val sealed: Sealed)
 
-    private sealed class Sealed {
-        object AnObject : Sealed()
-    }
+    private sealed class Sealed { object AnObject : Sealed() }
 
     private data class WrapsData(val data: DummyData)
 
