@@ -1,17 +1,16 @@
 package com.github.greghynds.approvals
 
-import com.github.greghynds.approvals.PrintableStringTest.Sealed.AnObject
+import com.github.greghynds.approvals.PrintableExtensionsTest.Sealed.AnObject
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-
-class PrintableStringTest {
+class PrintableExtensionsTest {
 
     @Test
     fun `formats string primitives as string literals`() {
         val string = "lorem ipsum"
 
-        val result = PrintableString.from(string)
+        val result = string.toPrintableString()
 
         assertThat(result).isEqualTo(string)
     }
@@ -20,7 +19,7 @@ class PrintableStringTest {
     fun `formats integer primitives as string literals`() {
         val integer = 123
 
-        val result = PrintableString.from(integer)
+        val result = integer.toPrintableString()
 
         assertThat(result).isEqualTo("123")
     }
@@ -29,7 +28,7 @@ class PrintableStringTest {
     fun `formats long primitives as string literals`() {
         val long = 123L
 
-        val result = PrintableString.from(long)
+        val result = long.toPrintableString()
 
         assertThat(result).isEqualTo("123")
     }
@@ -38,7 +37,7 @@ class PrintableStringTest {
     fun `formats float primitives as string literals`() {
         val float = 5.0f
 
-        val result = PrintableString.from(float)
+        val result = float.toPrintableString()
 
         assertThat(result).isEqualTo("5.0")
     }
@@ -47,7 +46,7 @@ class PrintableStringTest {
     fun `formats double primitives as string literals`() {
         val double = 5.0
 
-        val result = PrintableString.from(double)
+        val result = double.toPrintableString()
 
         assertThat(result).isEqualTo("5.0")
     }
@@ -56,7 +55,7 @@ class PrintableStringTest {
     fun `formats char primitives as string literals`() {
         val char = 'c'
 
-        val result = PrintableString.from(char)
+        val result = char.toPrintableString()
 
         assertThat(result).isEqualTo("c")
     }
@@ -65,7 +64,7 @@ class PrintableStringTest {
     fun `formats boolean primitives as string literals`() {
         val boolean = true
 
-        val result = PrintableString.from(boolean)
+        val result = boolean.toPrintableString()
 
         assertThat(result).isEqualTo("true")
     }
@@ -74,7 +73,7 @@ class PrintableStringTest {
     fun `formats byte primitives as string literals`() {
         val byte: Byte = 123
 
-        val result = PrintableString.from(byte)
+        val result = byte.toPrintableString()
 
         assertThat(result).isEqualTo("123")
     }
@@ -83,7 +82,7 @@ class PrintableStringTest {
     fun `formats short primitives as string literalsL`() {
         val short: Short = 123
 
-        val result = PrintableString.from(short)
+        val result = short.toPrintableString()
 
         assertThat(result).isEqualTo("123")
     }
@@ -100,7 +99,7 @@ class PrintableStringTest {
                 "boolean=true" +
                 ")"
 
-        val result = PrintableString.from(data)
+        val result = data.toPrintableString()
 
         assertThat(result).isEqualTo(expected)
     }
@@ -109,7 +108,7 @@ class PrintableStringTest {
     fun `formats kotlin objects as simple class names`() {
         val anObject = AnObject
 
-        val result = PrintableString.from(anObject)
+        val result = anObject.toPrintableString()
 
         assertThat(result).isEqualTo("AnObject")
     }
@@ -129,7 +128,7 @@ class PrintableStringTest {
                     "boolean=true" +
                     "))"
 
-        val result = PrintableString.from(wrapper)
+        val result = wrapper.toPrintableString()
 
         assertThat(result).isEqualTo(expected)
     }
@@ -142,14 +141,16 @@ class PrintableStringTest {
                     "sealed=AnObject" +
                     ")"
 
-        val result = PrintableString.from(wrapper)
+        val result = wrapper.toPrintableString()
 
         assertThat(result).isEqualTo(expected)
     }
 
     private data class WrapsAnObject(val sealed: Sealed)
 
-    private sealed class Sealed { object AnObject : Sealed() }
+    private sealed class Sealed {
+        object AnObject : Sealed()
+    }
 
     private data class WrapsData(val data: DummyData)
 

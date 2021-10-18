@@ -5,6 +5,6 @@ import org.approvaltests.Approvals
 object KotlinApprovals {
 
     fun verify(output: Any) {
-        Approvals.verify(KotlinPrintable(output))
+        Approvals.verify(output.toPrintable())
     }
 }
