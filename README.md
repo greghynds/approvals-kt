@@ -16,9 +16,9 @@ verify(foo)
 ### Verify using Approvals-Java
 ```kotlin 
 import org.approvaltests.Approvals.verify
-import com.github.greghynds.approvals.toPrintableString
+import com.github.greghynds.approvals.toPrintable
 
-val foo: Any = Foo(123, "hello, world").toPrintableString()
+val foo: Any = Foo(123, "hello, world").toPrintable()
 
 verify(foo) // outputs: Foo(bar=123, baz=hello, world)
 
