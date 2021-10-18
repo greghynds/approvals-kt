@@ -20,7 +20,7 @@ import com.github.greghynds.approvals.toPrintableString
 
 val foo: Any = Foo(123, "hello, world").toPrintableString()
 
-verify(foo)
+verify(foo) // outputs: Foo(bar=123, baz=hello, world)
 
 ```
 
